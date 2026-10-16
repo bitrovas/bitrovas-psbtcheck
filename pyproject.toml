@@ -1,0 +1,25 @@
+[project]
+name = "bitrovas-psbtcheck"
+version = "0.1.0"
+description = "Bitrovas PSBT-Check: Agent-SDK und MCP-Tool psbt_check (Nostr NIP-17 / NIP-90, Lightning via NWC)"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Bitrovas"}]
+keywords = ["bitcoin", "psbt", "nostr", "mcp", "lightning", "nip-90", "address-poisoning"]
+classifiers = ["License :: OSI Approved :: MIT License", "Programming Language :: Python :: 3", "Topic :: Security"]
+requires-python = ">=3.10"
+dependencies = ["nostr-sdk==0.45.1", "websockets>=12"]
+
+[project.urls]
+Nostr = "https://primal.net/p/npub1p4puhq53dz7948tujxl0sr9tk99jl5kvwwnd5y3nh3anwn6hkrdqwfff5z"
+
+[project.scripts]
+bitrovas-psbtcheck-mcp = "bitrovas_psbtcheck.mcp_server:main"
+bitrovas-psbtcheck = "bitrovas_psbtcheck.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["bitrovas_psbtcheck"]
